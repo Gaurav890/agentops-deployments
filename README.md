@@ -63,20 +63,3 @@ Gaurav Chaulagain — AI Solutions & Enterprise
 Deployment Strategist, San Francisco.
 
 [LinkedIn](https://linkedin.com/in/gaurav-chaulagain)
-
-2. Create these 4 folders with a README.md 
-placeholder in each:
-
-/audit-tool/README.md
-Content: "Workflow audit questionnaire — coming Day 2."
-
-/agent-templates/README.md  
-Content: "Agent templates for support triage, 
-document Q&A, and meeting-to-actions — in progress."
-
-/case-studies/README.md
-Content: "First deployment case study coming Week 2."
-
-/deployment-kit/README.md
-Content: "Deployment guide and configuration 
-templates — coming Week 3."
