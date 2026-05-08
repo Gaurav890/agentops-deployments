@@ -50,13 +50,6 @@ happened in a real organization with real users.
 
 ---
 
-## Writing
-
-- [Are AI Models Feeling Emotions or Having 
-Conscious Experiences?](https://medium.com/@gauravchaulagain/are-ai-models-feeling-emotions-or-having-conscious-experiences-8c45d737b495)
-
----
-
 ## About
 
 Gaurav Chaulagain — AI Solutions & Enterprise 
