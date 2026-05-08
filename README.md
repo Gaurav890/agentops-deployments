@@ -31,15 +31,6 @@ Each deployment is documented as a case study with:
 - **What's portable, situated, untransferable** — distinguishing the parts that generalize from the parts that depend on the specific workflow
 
 The portable layer is what makes a deployment a *case study* rather than a *demo*.
-
----
-
-## What's coming next
-
-- Multi-tenant rollout of Followloop to additional implementation PMs
-- Second deployment case study (in progress)
-- Architecture pattern extracts — once two deployments share an architectural pattern, it gets pulled into a reusable template
-
 ---
 
 ## About
