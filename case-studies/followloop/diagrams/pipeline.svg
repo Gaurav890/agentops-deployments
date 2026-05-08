@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 680 620" role="img">
+<title>Followloop architecture</title>
+<desc>Six-agent pipeline triggered by Avoma webhook. The Extractor parses transcripts into structured JSON, which fans out in parallel to the Email Generator, Internal Note Generator, and Escalation Analyzer. The Edit Lesson Extractor runs on a 30-minute background loop, comparing draft to sent emails and feeding lessons back into the Email Generator. The Weekly Report Generator runs on demand from accumulated context.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  .t { font-size: 14px; }
+  .ts { font-size: 12px; }
+  .th { font-size: 14px; font-weight: 500; }
+  .arr { stroke: #5F5E5A; stroke-width: 1; fill: none; }
+  .gray-fill { fill: #F1EFE8; stroke: #5F5E5A; }
+  .gray-text { fill: #2C2C2A; }
+  .purple-fill { fill: #EEEDFE; stroke: #534AB7; }
+  .purple-text { fill: #26215C; }
+  .purple-text-sub { fill: #534AB7; }
+  .teal-fill { fill: #E1F5EE; stroke: #0F6E56; }
+  .teal-text { fill: #04342C; }
+  .teal-text-sub { fill: #0F6E56; }
+  .coral-fill { fill: #FAECE7; stroke: #993C1D; }
+  .coral-text { fill: #4A1B0C; }
+  .coral-text-sub { fill: #993C1D; }
+  .amber-fill { fill: #FAEEDA; stroke: #854F0B; }
+  .amber-text { fill: #412402; }
+  .amber-text-sub { fill: #854F0B; }
+  .blue-fill { fill: #E6F1FB; stroke: #185FA5; }
+  .blue-text { fill: #042C53; }
+  .blue-text-sub { fill: #185FA5; }
+</style>
+</defs>
+
+<rect x="260" y="30" width="160" height="44" rx="8" stroke-width="0.5" class="gray-fill"/>
+<text class="th gray-text" x="340" y="54" text-anchor="middle" dominant-baseline="central">Avoma webhook</text>
+<text class="ts gray-text" x="340" y="88" text-anchor="middle" dominant-baseline="central">Transcript ready</text>
+
+<line x1="340" y1="100" x2="340" y2="120" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="240" y="120" width="200" height="56" rx="8" stroke-width="0.5" class="purple-fill"/>
+<text class="th purple-text" x="340" y="140" text-anchor="middle" dominant-baseline="central">Agent 1: Extractor</text>
+<text class="ts purple-text-sub" x="340" y="160" text-anchor="middle" dominant-baseline="central">Transcript to structured JSON</text>
+
+<line x1="340" y1="176" x2="340" y2="200" class="arr"/>
+<line x1="130" y1="200" x2="540" y2="200" class="arr"/>
+<line x1="130" y1="200" x2="130" y2="230" class="arr" marker-end="url(#arrow)"/>
+<line x1="340" y1="200" x2="340" y2="230" class="arr" marker-end="url(#arrow)"/>
+<line x1="540" y1="200" x2="540" y2="230" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="40" y="230" width="180" height="56" rx="8" stroke-width="0.5" class="teal-fill"/>
+<text class="th teal-text" x="130" y="250" text-anchor="middle" dominant-baseline="central">Agent 2: Email gen</text>
+<text class="ts teal-text-sub" x="130" y="270" text-anchor="middle" dominant-baseline="central">Customer-facing draft</text>
+
+<rect x="250" y="230" width="180" height="56" rx="8" stroke-width="0.5" class="teal-fill"/>
+<text class="th teal-text" x="340" y="250" text-anchor="middle" dominant-baseline="central">Agent 3: Note gen</text>
+<text class="ts teal-text-sub" x="340" y="270" text-anchor="middle" dominant-baseline="central">Internal CS note</text>
+
+<rect x="450" y="230" width="180" height="56" rx="8" stroke-width="0.5" class="coral-fill"/>
+<text class="th coral-text" x="540" y="250" text-anchor="middle" dominant-baseline="central">Agent 4: Escalation</text>
+<text class="ts coral-text-sub" x="540" y="270" text-anchor="middle" dominant-baseline="central">Risk classification</text>
+
+<line x1="130" y1="286" x2="130" y2="320" class="arr" marker-end="url(#arrow)"/>
+<line x1="340" y1="286" x2="340" y2="320" class="arr" marker-end="url(#arrow)"/>
+<line x1="540" y1="286" x2="540" y2="320" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="60" y="320" width="140" height="40" rx="8" stroke-width="0.5" class="gray-fill"/>
+<text class="ts gray-text" x="130" y="340" text-anchor="middle" dominant-baseline="central">Gmail draft</text>
+
+<rect x="270" y="320" width="140" height="40" rx="8" stroke-width="0.5" class="gray-fill"/>
+<text class="ts gray-text" x="340" y="340" text-anchor="middle" dominant-baseline="central">Slack post</text>
+
+<rect x="470" y="320" width="140" height="40" rx="8" stroke-width="0.5" class="gray-fill"/>
+<text class="ts gray-text" x="540" y="340" text-anchor="middle" dominant-baseline="central">Risk record</text>
+
+<line x1="130" y1="360" x2="130" y2="400" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="40" y="400" width="180" height="56" rx="8" stroke-width="0.5" class="amber-fill"/>
+<text class="th amber-text" x="130" y="420" text-anchor="middle" dominant-baseline="central">Edit detection</text>
+<text class="ts amber-text-sub" x="130" y="440" text-anchor="middle" dominant-baseline="central">30-min background job</text>
+
+<line x1="220" y1="428" x2="250" y2="428" class="arr" marker-end="url(#arrow)"/>
+
+<rect x="250" y="400" width="200" height="56" rx="8" stroke-width="0.5" class="amber-fill"/>
+<text class="th amber-text" x="350" y="420" text-anchor="middle" dominant-baseline="central">Agent 5: Lesson extractor</text>
+<text class="ts amber-text-sub" x="350" y="440" text-anchor="middle" dominant-baseline="central">Diff to generalizable rule</text>
+
+<path d="M 350 456 L 350 488 L 130 488 L 130 286" stroke="#BA7517" stroke-width="0.5" fill="none" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+<text class="ts amber-text-sub" x="240" y="505" text-anchor="middle" dominant-baseline="central">Lessons fed back to email gen</text>
+
+<rect x="240" y="540" width="200" height="56" rx="8" stroke-width="0.5" class="blue-fill"/>
+<text class="th blue-text" x="340" y="560" text-anchor="middle" dominant-baseline="central">Agent 6: Weekly report</text>
+<text class="ts blue-text-sub" x="340" y="580" text-anchor="middle" dominant-baseline="central">On demand from history</text>
+</svg>
