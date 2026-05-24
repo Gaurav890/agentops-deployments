@@ -185,7 +185,7 @@ After completing the audit, you should have:
 - One chosen workflow with a justification
 - A measurable v1 success criterion
 
-That's the input to the **Identify** stage of the AgentOps methodology. From here, go to [/followloop/agent-templates/](../followloop/agent-templates/) and pick the patterns that match your chosen workflow.
+That's the input to the **Identify** stage of the AgentOps methodology. From here, go to [/agent-deployments/followloop/agent-templates/](../agent-deployments/followloop/agent-templates/) and pick the patterns that match your chosen workflow.
 
 ---
 

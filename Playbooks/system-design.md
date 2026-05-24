@@ -11,9 +11,9 @@ It is not a tutorial. It is not specific to one product. Each section covers one
 | If you're asking… | Look here |
 | --- | --- |
 | *"How do I find what to build?"* | [/methodology/](../methodology/) and [/audit-tool/](../audit-tool/) |
-| *"What's a proven agent pattern for problem X?"* | [/followloop/agent-templates/](../followloop/agent-templates/) |
+| *"What's a proven agent pattern for problem X?"* | [/agent-deployments/followloop/agent-templates/](../agent-deployments/followloop/agent-templates/) |
 | *"How do I structure the **system** these agents live in?"* | **This file** |
-| *"What does a real deployment look like?"* | [/followloop/](../followloop/) |
+| *"What does a real deployment look like?"* | [/agent-deployments/followloop/](../agent-deployments/followloop/) |
 
 The agent-templates answer "what shape should each agent have." This file answers "how do those agents fit together, and how do you keep the system maintainable, debuggable, and cheap?"
 
@@ -163,7 +163,7 @@ The universal failure mode: shipping with no eval, then having no way to tell wh
 | **Per-pipeline outcome** | Is the user shipping the output as-is, or with edits? | Week one |
 | **Outcome-level metric** | Is the user actually getting time/value back from the deployment? | Whenever you have a real baseline |
 
-Most teams skip layer 2. Don't — it's the most useful one. Edit rate (how often the user changes the output before shipping) is a per-pipeline quality signal that comes for free if you instrument the channel. It's also the primary signal a [Feedback Loop Learner](../followloop/agent-templates/feedback-loop-learner/) consumes.
+Most teams skip layer 2. Don't — it's the most useful one. Edit rate (how often the user changes the output before shipping) is a per-pipeline quality signal that comes for free if you instrument the channel. It's also the primary signal a [Feedback Loop Learner](../agent-deployments/followloop/agent-templates/feedback-loop-learner/) consumes.
 
 ### Build the boring instrumentation first
 

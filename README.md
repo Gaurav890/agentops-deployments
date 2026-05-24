@@ -18,7 +18,7 @@ This is not a demo repo. Every deployment here is running in a real environment,
 
 | System | Domain | Status |
 | --- | --- | --- |
-| [Followloop](./followloop/) | B2B SaaS implementation work — autonomous meeting follow-up, escalation analysis, weekly reports | Live ✅ |
+| [Followloop](./agent-deployments/followloop/) | B2B SaaS implementation work — autonomous meeting follow-up, escalation analysis, weekly reports | Live ✅ |
 
 ---
 
