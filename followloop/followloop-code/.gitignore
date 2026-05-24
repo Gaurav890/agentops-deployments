@@ -1,0 +1,44 @@
+# Secrets / env
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs / runtime state
+*.log
+backend/jobs/.avoma_last_poll
+
+# Credentials / keys (extra safety)
+*.pem
+*.key
+credentials.json
+client_secret*.json
+service-account*.json
+token.json
+
+# Node (root-level safety net; frontend has its own)
+node_modules/
