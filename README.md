@@ -18,13 +18,13 @@ This is not a demo repo. Every deployment here is running in a real environment,
 
 | System | Domain | Status |
 | --- | --- | --- |
-| [Followloop](./case-studies/followloop/) | B2B SaaS implementation work — autonomous meeting follow-up, escalation analysis, weekly reports | Live ✅ |
+| [Followloop](./followloop/) | B2B SaaS implementation work — autonomous meeting follow-up, escalation analysis, weekly reports | Live ✅ |
 
 ---
 
 ## Methodology
 
-Each deployment is documented as a case study with:
+The full methodology lives in [/methodology/](./methodology/). In short, each deployment is documented as a case study with:
 
 - **Architecture** — what was built, why each component exists, what fails if you collapse them
 - **Evaluation** — real metrics from production, with the methodology behind every number
