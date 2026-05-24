@@ -24,14 +24,17 @@ This is not a demo repo. Every deployment here is running in a real environment,
 
 ## Methodology
 
-Each deployment in this repo carries its own set of methodology artifacts — the same five-stage process is applied, but every deployment documents how it played out in that specific workflow. For Followloop those artifacts are:
+AgentOps is a five-stage process — **Audit → Identify → Build → Deploy → Measure** — for going from a real organizational workflow to a deployed AI agent that measurably saves time. Each stage is named for what blocks most projects there: not knowing what to automate, scoping too broad, collapsing two agents into one, shipping without a trigger, declaring success without a baseline.
 
-- **[Methodology](./agent-deployments/followloop/methodology.md)** — the five-stage process (Audit → Identify → Build → Deploy → Measure) as it was applied to this workflow
-- **[System-design playbook](./agent-deployments/followloop/system-design-playbook.md)** — the multi-agent design decisions made during Build, framed so the patterns transfer
-- **[Pre-build audit](./agent-deployments/followloop/pre-build-audit.md)** — the 10-question Stage-1 audit that scoped v1
-- **Architecture, evaluation, portable/situated/untransferable** — covered inside the deployment's [README](./agent-deployments/followloop/README.md)
+Every deployment in this repo carries its own *worked* version of the methodology — the same five stages, documented as they played out in that specific workflow. Each case study includes:
 
-The portable layer is what makes a deployment a *case study* rather than a *demo*.
+- A **methodology writeup** — how the five stages were applied
+- A **system-design playbook** — the multi-agent design decisions made during Build
+- A **pre-build audit** — the Stage-1 audit that scoped v1
+- Architecture, evaluation, and the **portable / situated / untransferable** breakdown
+
+The portable layer — what's reusable across deployments — is what makes each one a *case study* rather than a *demo*. See [Followloop](./agent-deployments/followloop/) for a full worked example.
+
 ---
 
 ## About
