@@ -8,7 +8,7 @@ A structured 10-question worksheet you complete **before writing a single line o
 
 A scope-discipline tool. It walks you through the operational surface of one team, identifies their recurring work, and uses a 6-axis leverage rubric to pick **one** workflow as the target for v1.
 
-It is the practical artifact for the **Audit** stage of [the AgentOps methodology](../methodology/) — the stage where you map the work *before* you start building.
+It is the practical artifact for the **Audit** stage of [the AgentOps methodology](./methodology.md) — the stage where you map the work *before* you start building.
 
 ## When to use it
 
@@ -185,7 +185,7 @@ After completing the audit, you should have:
 - One chosen workflow with a justification
 - A measurable v1 success criterion
 
-That's the input to the **Identify** stage of the AgentOps methodology. From here, go to [/agent-deployments/followloop/agent-templates/](../agent-deployments/followloop/agent-templates/) and pick the patterns that match your chosen workflow.
+That's the input to the **Identify** stage of the AgentOps methodology. From here, go to [agent templates](./agent-templates/) and pick the patterns that match your chosen workflow.
 
 ---
 

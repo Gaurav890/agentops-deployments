@@ -1,6 +1,6 @@
-# The AgentOps Methodology
+# Followloop — Methodology
 
-A repeatable process for going from a real organizational workflow to a deployed AI agent that measurably saves time. This is the playbook behind every case study in this repo.
+The process I used to take Followloop from "a PM spends 20 minutes per meeting writing follow-ups" to "the agent writes it and the PM edits." The five stages below are how I approached this deployment, framed so the patterns transfer to other workflows.
 
 ---
 
@@ -21,7 +21,7 @@ Heuristics that help:
 - Anything where the input is a single document and the output is a single document is a strong candidate
 - Anything that requires institutional voice (writing style, escalation judgment) is hard but high-value when it works
 
-The audit tool in [/audit-tool](../audit-tool/) is a 10-question structured version of this stage.
+The [pre-build audit](./pre-build-audit.md) in this folder is a 10-question structured version of this stage — it's what I filled out before writing any Followloop code.
 
 ### 2. Identify
 
@@ -38,7 +38,7 @@ Edit-tolerant workflows are dramatically easier to ship than fire-and-forget one
 
 The build phase has two non-obvious rules:
 
-**One agent, one job.** If you can describe the agent's purpose with the word "and" ("parse the transcript *and* write the email"), it's two agents. The Followloop case study spells out the cost of collapsing this — every fix to one job broke another.
+**One agent, one job.** If you can describe the agent's purpose with the word "and" ("parse the transcript *and* write the email"), it's two agents. I learned this the hard way on Followloop — when one agent did both extraction and writing, every fix to one job broke the other. Splitting into an extractor + a writer made each independently improvable.
 
 **Style examples > style instructions.** "Match my writing style" is a useless instruction to any model. Five real artifacts the user produced are useful. Build the prompt around examples, not adjectives.
 
@@ -75,15 +75,14 @@ The metrics that matter for an agent deployment:
 
 ## Portable vs. situated vs. untransferable
 
-Every deployment has three layers. Naming them is what makes a deployment a *case study* rather than a *demo*.
+Followloop has three layers. Naming them is what makes this a *case study* rather than a *demo*.
 
-| Layer | What it is | Example (Followloop) |
+| Layer | What it is | In Followloop |
 | --- | --- | --- |
 | **Portable** | Architecture and patterns that generalize across domains | Extractor-first pipeline; style examples > instructions; async edit-lesson loop; sentiment as a separate agent from summarization |
 | **Situated** | Choices specific to this workflow but replaceable in another | Avoma/Gmail/Slack as channels; the meeting taxonomy (onboarding, weekly sync, QBR); the 14-day rollup window |
-| **Untransferable** | Institutional knowledge baked in over time | The user's writing voice; the customer relationships that calibrate sentiment reads; what makes a "high-risk" flag actionable |
+| **Untransferable** | Institutional knowledge baked in over time | The PM's writing voice; the customer relationships that calibrate sentiment reads; what makes a "high-risk" flag actionable |
 
-The portable layer is the architecture. The situated layer is the prompts. The untransferable layer is the lessons accumulated over time. When you read a case study, separate them in your head — the portable layer is what you can take to your own deployment.
+The portable layer is the architecture. The situated layer is the prompts. The untransferable layer is the lessons accumulated over time. If you're adapting Followloop to a different domain, take the portable layer as-is, rewrite the situated layer for your channels and taxonomy, and budget time to build the untransferable layer in production.
 
-
-If you're building a deployment of your own: read the audit tool, read one case study end-to-end, then pick the relevant agent templates. Don't read the templates first — context-free patterns are how people end up with platforms that nobody uses.
+If you're building a deployment of your own from scratch: start with the [pre-build audit](./pre-build-audit.md), walk this case study end-to-end, then pick the relevant [agent templates](./agent-templates/). Don't read the templates first — context-free patterns are how people end up with platforms that nobody uses.

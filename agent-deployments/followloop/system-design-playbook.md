@@ -1,8 +1,8 @@
-# System Design Playbook
+# Followloop — System Design Playbook
 
-Cross-cutting design decisions that apply to **any** multi-agent LLM deployment, regardless of domain. This is the file you consult during the **Build** stage of [the methodology](../methodology/) when you hit one of the recurring "should I do X or Y?" forks.
+The multi-agent design decisions I made while building Followloop, written up as a playbook. Each section covers one fork ("should I do X or Y?"), the rule of thumb I landed on, and the failure mode the rule prevents. They're framed so the patterns transfer — every decision below was made in the context of Followloop, but the underlying tradeoff isn't Followloop-specific.
 
-It is not a tutorial. It is not specific to one product. Each section covers one decision, the rule of thumb, and the failure mode the rule prevents.
+Consult this file during the **Build** stage of [the methodology](./methodology.md) when you hit one of the recurring forks.
 
 ---
 
@@ -10,10 +10,10 @@ It is not a tutorial. It is not specific to one product. Each section covers one
 
 | If you're asking… | Look here |
 | --- | --- |
-| *"How do I find what to build?"* | [/methodology/](../methodology/) and [/audit-tool/](../audit-tool/) |
-| *"What's a proven agent pattern for problem X?"* | [/agent-deployments/followloop/agent-templates/](../agent-deployments/followloop/agent-templates/) |
+| *"How do I find what to build?"* | [the methodology](./methodology.md) and [the pre-build audit](./pre-build-audit.md) |
+| *"What's a proven agent pattern for problem X?"* | [agent templates](./agent-templates/) |
 | *"How do I structure the **system** these agents live in?"* | **This file** |
-| *"What does a real deployment look like?"* | [/agent-deployments/followloop/](../agent-deployments/followloop/) |
+| *"What does a real deployment look like?"* | [Followloop case study](./README.md) |
 
 The agent-templates answer "what shape should each agent have." This file answers "how do those agents fit together, and how do you keep the system maintainable, debuggable, and cheap?"
 
@@ -163,7 +163,7 @@ The universal failure mode: shipping with no eval, then having no way to tell wh
 | **Per-pipeline outcome** | Is the user shipping the output as-is, or with edits? | Week one |
 | **Outcome-level metric** | Is the user actually getting time/value back from the deployment? | Whenever you have a real baseline |
 
-Most teams skip layer 2. Don't — it's the most useful one. Edit rate (how often the user changes the output before shipping) is a per-pipeline quality signal that comes for free if you instrument the channel. It's also the primary signal a [Feedback Loop Learner](../agent-deployments/followloop/agent-templates/feedback-loop-learner/) consumes.
+Most teams skip layer 2. Don't — it's the most useful one. Edit rate (how often the user changes the output before shipping) is a per-pipeline quality signal that comes for free if you instrument the channel. It's also the primary signal a [Feedback Loop Learner](./agent-templates/feedback-loop-learner/) consumes.
 
 ### Build the boring instrumentation first
 

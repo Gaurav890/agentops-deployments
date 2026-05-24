@@ -24,11 +24,12 @@ This is not a demo repo. Every deployment here is running in a real environment,
 
 ## Methodology
 
-The full methodology lives in [/methodology/](./methodology/). In short, each deployment is documented as a case study with:
+Each deployment in this repo carries its own set of methodology artifacts — the same five-stage process is applied, but every deployment documents how it played out in that specific workflow. For Followloop those artifacts are:
 
-- **Architecture** — what was built, why each component exists, what fails if you collapse them
-- **Evaluation** — real metrics from production, with the methodology behind every number
-- **What's portable, situated, untransferable** — distinguishing the parts that generalize from the parts that depend on the specific workflow
+- **[Methodology](./agent-deployments/followloop/methodology.md)** — the five-stage process (Audit → Identify → Build → Deploy → Measure) as it was applied to this workflow
+- **[System-design playbook](./agent-deployments/followloop/system-design-playbook.md)** — the multi-agent design decisions made during Build, framed so the patterns transfer
+- **[Pre-build audit](./agent-deployments/followloop/pre-build-audit.md)** — the 10-question Stage-1 audit that scoped v1
+- **Architecture, evaluation, portable/situated/untransferable** — covered inside the deployment's [README](./agent-deployments/followloop/README.md)
 
 The portable layer is what makes a deployment a *case study* rather than a *demo*.
 ---
